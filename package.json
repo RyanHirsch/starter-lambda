@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d dist",
+    "clean": "rm -rf terraform/dist/",
+    "prebuild": "npm run clean",
+    "build": "babel src -d terraform/dist",
+    "postbuild": "cp package.json terraform/dist/ && cp package-lock.json terraform/dist/ && cd terraform/dist && npm install --production",
     "dev": "babel-watch src/index.js",
     "lint": "eslint src",
     "test": "mocha --compilers js:babel-core/register ./test/**"
