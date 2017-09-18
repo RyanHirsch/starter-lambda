@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run mocha",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+        "stopOnEntry": false,
+        "args": ["--compilers", "js:babel-core/register", "${file}", "--no-timeouts"],
+        "cwd": "${workspaceRoot}",
+        "runtimeExecutable": null,
+        "sourceMaps": true,
+        "env": { "NODE_ENV": "test"}
+      }
+    ]
+  }
